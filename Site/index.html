@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sipho AI Chat</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: linear-gradient(90deg, #f5f5f5, #e0e0e0);
+            padding: 10px 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            left: 0;
+            right: 0;
+            flex-shrink: 0;
+        }
+
+        header .photo {
+            display: flex;
+            align-items: center;
+        }
+
+        header .photo img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 1.8rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #0d47a1;
+        }
+
+        .header-controls {
+            display: flex;
+            align-items: center;
+        }
+
+        .header-controls button {
+            background: none;
+            border: none;
+            cursor: pointer;
+            margin-left: 10px;
+        }
+
+        .header-controls img {
+            height: 30px;
+        }
+
+        /* Chat Container */
+        .chat-container {
+            flex: 1;
+            display: flex;
+            overflow: hidden;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 20px;
+            background-color: #ffffff;
+        }
+
+        .chat-box::-webkit-scrollbar {
+            display: none;
+            /* Safari and Chrome */
+        }
+
+        .chat-box {
+            flex: 1;
+            overflow-y: auto;
+            padding-right: 10px;
+            margin-bottom: 20px;
+            margin-top: 100px;
+
+
+            /* Hide the scrollbar */
+            scrollbar-width: none;
+            /* Firefox */
+            -ms-overflow-style: none;
+            /* Internet Explorer 10+ */
+        }
+
+        .message {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 15px;
+        }
+
+        .message .avatar {
+            width: 40px;
+            height: 40px;
+            background-color: #0d47a1;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-right: 10px;
+            font-size: 1.5rem;
+        }
+
+        .message .text {
+            background-color: #e0e0e0;
+            padding: 15px;
+            border-radius: 10px;
+            max-width: 75%;
+            color: #333;
+        }
+
+        .user-message {
+            justify-content: flex-start;
+            flex-direction: row-reverse;
+        }
+
+        .user-message .text {
+            background-color: #ffffff;
+            color: #333;
+        }
+
+        .input-container {
+            display: flex;
+            align-items: center;
+            background-color: #e0e0e0;
+            border-radius: 10px;
+            padding: 10px;
+            flex-shrink: 0;
+        }
+
+        .input-container input[type="text"] {
+            flex: 1;
+            border: none;
+            background: transparent;
+            color: #333;
+            padding: 10px;
+            font-size: 1rem;
+            outline: none;
+        }
+
+        .input-container button {
+            background-color: #0d47a1;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+            margin-left: 10px;
+            transition: background-color 0.3s ease;
+        }
+
+        .input-container #start-btn {
+            background-color: #0d47a1;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+            margin-left: 10px;
+            transition: background-color 0.3s ease;
+        }
+
+        .input-container button:hover {
+            background-color: #1565c0;
+        }
+
+        .input-container .controls {
+            display: flex;
+            align-items: center;
+            margin-left: 10px;
+        }
+
+        .input-container .controls button {
+            background: none;
+            border: none;
+            cursor: pointer;
+            margin-left: 5px;
+        }
+
+        .input-container .controls img {
+            width: 25px;
+            height: 25px;
+        }
+
+        .bar {
+            height: 10px;
+        }
+
+        .sound-icon {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .sound-wave {
+            width: 250px;
+            height: 80px;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        .sound-wave .bar {
+            display: block;
+            width: 2px;
+            margin-right: 1px;
+            background: #7C93BF;
+            transition: height 0.1s;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="photo">
+            <div class='sound-icon disabled'>
+                <div class='sound-wave'>
+                    <i class='bar'></i>
+                    <i class='bar'></i>
+                    <i class='bar'></i>
+                    <i class='bar'></i>
+                    <i class='bar'></i>
+                    <i class='bar'></i>
+                    <i class='bar'></i>
+                    <i class='bar'></i>
+                    <i class='bar'></i>
+                    <i class='bar'></i>
+                    <i class='bar'></i>
+                    <i class='bar'></i>
+                    <i class='bar'></i>
+                    <i class='bar'></i>
+                    <i class='bar'></i>
+                    <i class='bar'></i>
+                    <i class='bar'></i>
+                    <i class='bar'></i>
+                    <i class='bar'></i>
+                    <i class='bar'></i>
+                </div>
+            </div>
+        </div>
+        <div class="header-controls">
+            <button id="header-photo-button">
+                <img src="https://banglejs.com/img/logo-sml.png" alt="Photo Button">
+            </button>
+        </div>
+    </header>
+    <audio id="startSound" src="blip.mp3" preload="auto"></audio>
+    <main class="chat-container">
+        <div class="chat-box" id="chat-box">
+            <!-- Chat messages will be appended here -->
+        </div>
+        <div class="input-container">
+            <input type="text" id="user-input" placeholder="Type your message...">
+            <div class="controls">
+                <button id="start-btn">Start Listening</button>
+            </div>
+            <button type="submit" onclick="sendMessage()">Send</button>
+        </div>
+    </main>
+
+    <script>
+        const startBtn = document.getElementById('start-btn');
+        const resultDiv = document.getElementById('result');
+
+        const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+        if (!SpeechRecognition) {
+            addMessage("Speech recognition is not supported in this browser.", 'bot-message');
+        }
+
+        const recognition = new SpeechRecognition();
+        recognition.lang = 'en-US';
+        recognition.interimResults = false;
+        recognition.maxAlternatives = 1;
+
+        recognition.onresult = function (event) {
+            const transcript = event.results[0][0].transcript;
+            addMessage(transcript, 'user-message');
+            fetch('/greet', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ input: transcript })
+
+            })
+                .then(response => response.json())
+                .then(data => {
+                    addMessage(data.message, 'bot-message');
+                    speakText(data.message);
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+
+                    // Customize error messages based on the type of error
+                    if (error.message.includes('NetworkError') || error.message.includes('Failed to fetch')) {
+                        speakText("Seems the server is offline or the network is down!");
+                        addMessage('Error: Network issue. Please check your connection.', 'error-message');
+                    } else if (error.message.includes('Server error')) {
+                        speakText("The server encountered an error. Please try again later.");
+                        addMessage('Error: The server responded with an error.', 'error-message');
+                    } else if (error.message.includes('Invalid response format')) {
+                        speakText("There was an issue with the server response. Please try again.");
+                        addMessage('Error: The server returned an unexpected response.', 'error-message');
+                    } else {
+                        speakText("An unexpected error occurred. Please try again.");
+                        addMessage('Error: An unexpected error occurred.', 'error-message');
+                    }
+                });
+        };
+
+        recognition.onerror = function (event) {
+            addMessage(`Error occurred in recognition: ${event.error}`, 'bot-message');
+            recognition.stop();
+        };
+
+        recognition.onend = function () {
+            startBtn.disabled = false;
+            startBtn.textContent = "Start Listening";
+        };
+
+        startBtn.addEventListener('click', function () {
+            startBtn.disabled = true;
+            startBtn.textContent = "Listening...";
+            var audio = document.getElementById('startSound');
+            audio.play();
+            recognition.start();
+        });
+
+        let voices = [];
+
+        function loadVoices() {
+            voices = speechSynthesis.getVoices();
+            if (voices.length === 0) {
+                // Voices are not loaded yet, wait for them
+                speechSynthesis.onvoiceschanged = loadVoices;
+            }
+        }
+
+        function speakText(text) {
+            if (!text) {
+                console.log('Please enter some text to speak.');
+                return;
+            }
+
+            // Ensure voices are loaded
+            if (voices.length === 0) {
+                loadVoices();
+                // Retry speaking after a short delay to allow voices to load
+                setTimeout(() => speakText(text), 100);
+                return;
+            }
+
+            const utterance = new SpeechSynthesisUtterance(text);
+
+            // Set the language and voice
+            utterance.lang = 'en-ZA';  // South African English
+
+            // Select the specific South African English male voice if available
+            const saMaleVoice = voices.find(voice => voice.name === 'Microsoft Guy Online (Natural) - English (United States)');
+
+            if (saMaleVoice) {
+                utterance.voice = saMaleVoice;
+            } else {
+                console.warn('South African English male voice not found, using default voice.');
+            }
+
+            utterance.onstart = function () {
+                // Start
+                recognition.stop();
+                startAnimation();
+                startBtn.disabled = true;
+                startBtn.textContent = "Speaking...";
+            };
+
+            utterance.onend = function () {
+                // End
+                stopAnimation();
+                startBtn.disabled = false;
+                startBtn.textContent = "Start Listening";
+            };
+
+            utterance.onerror = function (event) {
+                console.error('SpeechSynthesisUtterance.onerror', event);
+                alert('An error occurred during speech synthesis: ' + event.error);
+            };
+
+            speechSynthesis.speak(utterance);
+        }
+
+        // Load voices initially
+        loadVoices();
+
+
+        function startAnimation() {
+            const bars = document.querySelectorAll('.bar');
+            animateBars(bars);
+        }
+
+        function stopAnimation() {
+            const bars = document.querySelectorAll('.bar');
+            bars.forEach(bar => {
+                bar.style.height = '10px'; // Reset to a minimum height
+            });
+        }
+
+        function animateBars(bars) {
+            const interval = setInterval(() => {
+                if (window.speechSynthesis.speaking) {
+                    bars.forEach(bar => {
+                        const height = Math.random() * 100; // Random height between 0 and 100px
+                        bar.style.height = height + 'px';
+                    });
+                } else {
+                    clearInterval(interval);
+                }
+            }, 100);
+        }
+
+        function sendMessage() {
+            const userInput = document.getElementById('user-input').value;
+            if (userInput.trim() === '') return; // Don't send empty messages
+
+            // Add user message to chat
+            addMessage(userInput, 'user-message');
+
+            // Clear the input field
+            document.getElementById('user-input').value = '';
+
+            fetch('/greet', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ input: userInput })
+
+            })
+                .then(response => response.json())
+                .then(data => {
+                    addMessage(data.message, 'bot-message');
+                    speakText(data.message);
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    speakText("Seems the server is offline!");
+                });
+
+        }
+
+        function addMessage(text, className) {
+            const chatBox = document.getElementById('chat-box');
+            const messageDiv = document.createElement('div');
+            messageDiv.className = `message ${className}`;
+
+            const avatarDiv = document.createElement('div');
+            avatarDiv.className = 'avatar';
+            avatarDiv.innerText = className === 'user-message' ? '👤' : '🤖';
+
+            const textDiv = document.createElement('div');
+            textDiv.className = 'text';
+            textDiv.innerText = text;
+
+            messageDiv.appendChild(avatarDiv);
+            messageDiv.appendChild(textDiv);
+            chatBox.appendChild(messageDiv);
+
+            // Scroll to the bottom of the chat box
+            chatBox.scrollTop = chatBox.scrollHeight;
+        }
+
+        // Bangle.js Code
+
+        var NORDIC_SERVICE = "6e400001-b5a3-f393-e0a9-e50e24dcca9e";
+        var NORDIC_RX = "6e400003-b5a3-f393-e0a9-e50e24dcca9e";
+
+        document.getElementById('header-photo-button').addEventListener('click', () => {
+            navigator.bluetooth.requestDevice({
+                filters: [{ services: [NORDIC_SERVICE] }],
+                acceptAllDevices: false // Set to false to apply filters
+            })
+                .then(device => {
+                    // Human-readable name of the device.
+                    console.log(device.name);
+                    //document.querySelector(".searchBtn").style.display = "none";
+
+                    // Attempts to connect to remote GATT Server.
+                    return device.gatt.connect();
+                })
+                .then(server => {
+                    // Once connected to the server, you can get the primary service(s)
+                    // and characteristic(s) to listen for data.
+                    return server.getPrimaryService(NORDIC_SERVICE);
+                })
+                .then(service => {
+                    // Get the characteristic you want to listen to.
+                    return service.getCharacteristic(NORDIC_RX);
+                })
+                .then(characteristic => {
+                    // Set up event listener for characteristic value changes.
+                    characteristic.addEventListener('characteristicvaluechanged', event => {
+                        // Handle incoming data here.
+                        var value = event.target.value;
+                        var stringValue = new TextDecoder().decode(value);
+
+                        if (stringValue.includes("!")) {
+                            var cleanString = stringValue.replace("[J", "")
+                            console.log(cleanString)
+                            if (cleanString.includes("Listen!")) {
+                                console.log("Listening.....")
+                                startBtn.textContent = "Listening...";
+                                var audio = document.getElementById('startSound');
+                                audio.play();
+                                recognition.start()
+                            }
+                            else if (cleanString.includes("Stop!")) {
+                                recognition.stop();
+                                console.log("Stopping.....")
+                            }
+                        }
+
+                    });
+
+                    // Start notifications for the characteristic to enable listening.
+                    return characteristic.startNotifications();
+                })
+                .catch(error => {
+                    console.error(error);
+                });
+        });
+    </script>
+</body>
+
+</html>

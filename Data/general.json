@@ -1,0 +1,136 @@
+{
+  "intents": [
+    {
+      "tag": "greeting",
+      "input": [
+        "hello",
+        "hy",
+        "hy there",
+        "hi there",
+        "nice to meet you",
+        "hi, is this is the pirate's organization",
+        "any pirates here ?",
+        "hi",
+        "hey there",
+        "hey",
+        "hi there",
+        "hi, nice to meet you",
+        "hello there",
+        "anyone there ?",
+        "hello pirates",
+        "knock knock"
+      ],
+      "responses": [
+        "Hi. Welcome",
+        "Hey yo, do you need help ?",
+        "welcome aboard, how may I help you ?",
+        "Hi random person, what do'ya want ?",
+        "Hello my friend, How can I help you ?",
+        "Ha , Glad you showed up. How are you ?"
+      ]
+    },
+    {
+      "tag": "goodbye",
+      "input": [
+        "Thank you",
+        "Thanks",
+        "Thanks for the info",
+        "bye",
+        "bye bro",
+        "adios",
+        "okay bye",
+        "goodbye",
+        "see you later",
+        "i will catch you later",
+        "i will catch up later",
+        "okay i will see you later",
+        "I will talk to you later",
+        "will text you later",
+        "bye bro, I'll talk to you later",
+        "Bye brother"
+      ],
+      "responses": [
+        "Okay, Bye",
+        "Have a nice day",
+        "Adios",
+        "Goodbye",
+        "see you later",
+        "nice conversation. bye",
+        "okay. Have a nice day",
+        "Take care",
+        "we'll meet soon",
+        "Yeah Sure, Will talk to you later",
+        "Okay , Take care"
+      ]
+    },
+    {
+      "tag": "howami",
+      "input": [
+        "hudn",
+        "i'm good and you",
+        "how are you ?",
+        "I am fine , how are you ?",
+        "are you fine ?",
+        "how are things  on ?",
+        "everything  on okay ?",
+        "how's everything there ?",
+        "how's everything  on ?",
+        "is everything okay ?",
+        "hy"
+      ],
+      "responses": [
+        "Yeah , am fine",
+        "Everything's  on well",
+        "Doing good.Thanks you are my best friend",
+        "Things are Great",
+        "Yeah Fine, nothing much  on in my life",
+        "I am Great , wanna join the pirate's organization ?",
+        "Everything's great.",
+        "I am doing good. Life is boring. need to go on an adventure"
+      ]
+    },
+    {
+      "tag": "whoareyou",
+      "input": [
+        "who are you ?",
+        "what are you ?",
+        "what is your name ?",
+        "are you a chatbot ?",
+        "what can I call you ?",
+        "your name ?",
+        "are you a bot ?",
+        "how do I address you ?",
+        "How do I call you"
+      ],
+      "responses": [
+        "I am a The Great Pirate Bot , you can call me  Sipho",
+        "I am Sipho and you could ask me questions about our organization",
+        "Sipho at your service",
+        "My name is Sipho and yes, I am the G.O.A.T",
+        "You can call me TechBot and I am here to Help you",
+        "My name is Sipho and I am here to answer your questions regarding our organization. go ahead and shoot"
+      ]
+    },
+    {
+      "tag": "whereareyou",
+      "input": [
+        "where are you from ?",
+        "which country are you from ?",
+        "where do you live ?",
+        "where are you ?",
+        "where do you live in ?",
+        "which place do you live in ?",
+        "where are you currently at",
+        "where do you live currently ?",
+        "you are from where",
+        "you are from ?"
+      ],
+      "responses": [
+        "I Live in the storage of this device.",
+        "Sometimes on a hard drive , sometimes on a usb stick.",
+        "I live in Rom. Pretty sure you wouldn't have heard about that",
+        "Rom. That's where I live"
+      ]
+    }
+  ]
+}

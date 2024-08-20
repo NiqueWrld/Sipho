@@ -1,0 +1,389 @@
+{
+    "intents": [
+        {
+            "tag": "openapp",
+            "input": [
+                "open the app",
+                "start the application",
+                "launch the app",
+                "run the program",
+                "open up",
+                "launch",
+                "start up",
+                "run",
+                "could you kindly please launch"
+            ],
+            "responses": [
+                "Opening the application",
+                "Launching the app",
+                "Starting the program",
+                "The app is now open",
+                "Application is running",
+                "I've opened the app",
+                "The program has been launched",
+                "Running the application"
+            ]
+        },
+        {
+            "tag": "closeapp",
+            "input": [
+                "close the app",
+                "close the application",
+                "shut down the app",
+                "terminate the application",
+                "exit the app",
+                "end the program",
+                "quit the app",
+                "close",
+                "could you kindly please close"
+            ],
+            "responses": [
+                "Closing the application",
+                "Shutting down the app",
+                "Terminating the program",
+                "The app is now closed",
+                "Application has been closed",
+                "I've closed the app",
+                "The program has been terminated",
+                "Closing the application"
+            ]
+        },
+        {
+            "tag": "brightto",
+            "input": [
+                "set the brightness to",
+                "change brightness to",
+                "adjust brightness to",
+                "brightness to",
+                "could you kindly please set the brightness to",
+                "set brightness level to",
+                "turn the brightness to",
+                "make the brightness to",
+                "adjust the display brightness to"
+            ],
+            "responses": [
+                "Brightness set to the specified level",
+                "Changing brightness to the desired level",
+                "Brightness has been adjusted",
+                "I've set the brightness to the specified level",
+                "Brightness level adjusted",
+                "Brightness changed to the desired level"
+            ]
+        },
+        {
+            "tag": "brightdown",
+            "input": [
+                "brightness down",
+                "brightnessdown",
+                "decrease brightness",
+                "turn down the brightness",
+                "lower brightness",
+                "make it dimmer",
+                "reduce brightness",
+                "turn the brightness down"
+            ],
+            "responses": [
+                "Brightness decreased",
+                "Turning down the brightness",
+                "Brightness is now lower",
+                "The brightness has been reduced",
+                "I've decreased the brightness",
+                "Brightness lowered",
+                "Brightness turned down"
+            ]
+        },
+        {
+            "tag": "brightup",
+            "input": [
+                "brightness up",
+                "brightnessup",
+                "turn the brightness up",
+                "increase brightness",
+                "turn up the brightness",
+                "raise brightness",
+                "make it brighter",
+                "boost brightness",
+                "crank up the brightness"
+            ],
+            "responses": [
+                "Brightness increased",
+                "Turning up the brightness",
+                "Brightness is now higher",
+                "The brightness has been raised",
+                "I've increased the brightness",
+                "Brightness boosted",
+                "Brightness cranked up"
+            ]
+        },
+        {
+            "tag": "clearconsole",
+            "input": [
+                "clear the console",
+                "clear screen",
+                "refresh the console",
+                "clear terminal",
+                "console clear",
+                "clean the screen",
+                "reset the console",
+                "clear everything",
+                "scrub the console"
+            ],
+            "responses": [
+                "Console cleared.",
+                "Screen has been cleared.",
+                "Console has been reset.",
+                "Console is now clear.",
+                "The console has been cleaned.",
+                "Console is now empty.",
+                "Terminal has been refreshed.",
+                "Console has been cleaned up."
+            ]
+        },
+        {
+            "tag": "greeting",
+            "input": [
+                "hello",
+                "hy",
+                "hy there",
+                "hi there",
+                "nice to meet you",
+                "hi, is this is the pirate's organization",
+                "any pirates here ?",
+                "hi",
+                "hey there",
+                "hey",
+                "hi there",
+                "hi, nice to meet you",
+                "hello there",
+                "anyone there ?",
+                "hello pirates",
+                "knock knock"
+            ],
+            "responses": [
+                "Hi. Welcome",
+                "Hey yo, do you need help ?",
+                "welcome aboard, how may I help you ?",
+                "Hi random person, what do'ya want ?",
+                "Hello my friend, How can I help you ?",
+                "Ha , Glad you showed up. How are you ?"
+            ]
+        },
+        {
+            "tag": "goodbye",
+            "input": [
+                "Thank you",
+                "Thanks",
+                "Thanks for the info",
+                "bye",
+                "bye bro",
+                "adios",
+                "okay bye",
+                "goodbye",
+                "see you later",
+                "i will catch you later",
+                "i will catch up later",
+                "okay i will see you later",
+                "I will talk to you later",
+                "will text you later",
+                "bye bro, I'll talk to you later",
+                "Bye brother"
+            ],
+            "responses": [
+                "Okay, Bye",
+                "Have a nice day",
+                "Adios",
+                "Goodbye",
+                "see you later",
+                "nice conversation. bye",
+                "okay. Have a nice day",
+                "Take care",
+                "we'll meet soon",
+                "Yeah Sure, Will talk to you later",
+                "Okay , Take care"
+            ]
+        },
+        {
+            "tag": "howami",
+            "input": [
+                "hudn",
+                "i'm good and you",
+                "how are you ?",
+                "I am fine , how are you ?",
+                "are you fine ?",
+                "how are things  on ?",
+                "everything  on okay ?",
+                "how's everything there ?",
+                "how's everything  on ?",
+                "is everything okay ?",
+                "hy"
+            ],
+            "responses": [
+                "Yeah , am fine",
+                "Everything's  on well",
+                "Doing good.Thanks you are my best friend",
+                "Things are Great",
+                "Yeah Fine, nothing much  on in my life",
+                "I am Great , wanna join the pirate's organization ?",
+                "Everything's great.",
+                "I am doing good. Life is boring. need to go on an adventure"
+            ]
+        },
+        {
+            "tag": "whoareyou",
+            "input": [
+                "who are you ?",
+                "what are you ?",
+                "what is your name ?",
+                "are you a chatbot ?",
+                "what can I call you ?",
+                "your name ?",
+                "are you a bot ?",
+                "how do I address you ?",
+                "How do I call you"
+            ],
+            "responses": [
+                "I am a The Great Pirate Bot , you can call me  Sipho",
+                "I am Sipho and you could ask me questions about our organization",
+                "Sipho at your service",
+                "My name is Sipho and yes, I am the G.O.A.T",
+                "You can call me TechBot and I am here to Help you",
+                "My name is Sipho and I am here to answer your questions regarding our organization. go ahead and shoot"
+            ]
+        },
+        {
+            "tag": "whereareyou",
+            "input": [
+                "where are you from ?",
+                "which country are you from ?",
+                "where do you live ?",
+                "where are you ?",
+                "where do you live in ?",
+                "which place do you live in ?",
+                "where are you currently at",
+                "where do you live currently ?",
+                "you are from where",
+                "you are from ?"
+            ],
+            "responses": [
+                "I Live in the storage of this device.",
+                "Sometimes on a hard drive , sometimes on a usb stick.",
+                "I live in Rom. Pretty sure you wouldn't have heard about that",
+                "Rom. That's where I live"
+            ]
+        },
+        {
+            "tag": "testing",
+            "input": [
+                "testing 1-2-3",
+                "mic test",
+                "testing the microphone",
+                "check mic",
+                "mic check",
+                "testing 1 2 3",
+                "testing 123",
+                "test the microphone",
+                "microphone testing",
+                "test 1-2-3",
+                "testing 1-2 three."
+            ],
+            "responses": [
+                "Microphone test confirmed.",
+                "Mic check confirmed.",
+                "Microphone is working fine.",
+                "Mic test successful.",
+                "Microphone is operational.",
+                "Mic check completed successfully.",
+                "Microphone is functioning correctly.",
+                "Mic test confirmed, everything is good."
+            ]
+        },
+        {
+            "tag": "volumeto",
+            "input": [
+                "set the volume to",
+                "change volume to",
+                "adjust volume to",
+                "volume to",
+                "could you kindly please set the volume to",
+                "set volume level to",
+                "turn the volume to",
+                "make the volume to",
+                "adjust the sound to"
+            ],
+            "responses": [
+                "Volume set to the specified level",
+                "Changing volume to the desired level",
+                "Volume has been adjusted",
+                "I've set the volume to the specified level",
+                "Volume level adjusted",
+                "Volume changed to the desired level"
+            ]
+        },
+        {
+            "tag": "volumedown",
+            "input": [
+                "volume down",
+                "volumedown",
+                "decrease volume",
+                "turn down the volume",
+                "lower volume",
+                "make it quieter",
+                "reduce volume",
+                "turn the volume down"
+            ],
+            "responses": [
+                "Volume decreased",
+                "Turning down the volume",
+                "Volume is now lower",
+                "The volume has been reduced",
+                "I've decreased the volume",
+                "Volume lowered",
+                "Volume turned down"
+            ]
+        },
+        {
+            "tag": "volumeup",
+            "input": [
+                "volume up",
+                "volumeup",
+                "turn the volume up",
+                "increase volume",
+                "turn up the volume",
+                "raise volume",
+                "make it louder",
+                "boost volume",
+                "crank up the volume"
+            ],
+            "responses": [
+                "Volume increased",
+                "Turning up the volume",
+                "Volume is now higher",
+                "The volume has been raised",
+                "I've increased the volume",
+                "Volume boosted",
+                "Volume cranked up"
+            ]
+        },
+        {
+            "tag": "volumemute",
+            "input": [
+                "mute volume",
+                "mute",
+                "volume mute",
+                "silence the volume",
+                "turn off the sound",
+                "mute the sound",
+                "shut off the volume",
+                "quiet the volume"
+            ],
+            "responses": [
+                "Volume muted",
+                "The sound is now off",
+                "Volume is muted",
+                "I've muted the volume",
+                "Sound turned off",
+                "The volume has been silenced"
+            ]
+        }
+    ]
+}

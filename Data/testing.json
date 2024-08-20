@@ -1,0 +1,30 @@
+{
+    "intents": [
+        {
+            "tag": "testing",
+            "input": [
+                "testing 1-2-3",
+                "mic test",
+                "testing the microphone",
+                "check mic",
+                "mic check",
+                "testing 1 2 3",
+                "testing 123",
+                "test the microphone",
+                "microphone testing",
+                "test 1-2-3",
+                "testing 1-2 three."
+            ],
+            "responses": [
+                "Microphone test confirmed.",
+                "Mic check confirmed.",
+                "Microphone is working fine.",
+                "Mic test successful.",
+                "Microphone is operational.",
+                "Mic check completed successfully.",
+                "Microphone is functioning correctly.",
+                "Mic test confirmed, everything is good."
+            ]
+        }
+    ]
+}

@@ -1,0 +1,52 @@
+{
+    "applications": [
+        {
+            "name": "cmd",
+            "path": "C:\\Windows\\System32\\cmd.exe"
+        },
+        {
+            "name": "notepad",
+            "path": "C:\\Windows\\System32\\notepad.exe"
+        },
+        {
+            "name": "calculator",
+            "path": "C:\\Windows\\System32\\calc.exe"
+        },
+        {
+            "name": "control panel",
+            "path": "C:\\Windows\\System32\\control.exe"
+        },
+        {
+            "name": "explorer",
+            "path": "C:\\Windows\\explorer.exe"
+        },
+        {
+            "name": "visual studio",
+            "path": "C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Community\\Common7\\IDE\\devenv.exe"
+        },
+        {
+            "name": "vs code",
+            "path": "C:\\Users\\Siyathokoza321\\AppData\\Local\\Programs\\Microsoft VS Code\\Code.exe"
+        },
+        {
+            "name": "word",
+            "path": "C:\\Program Files\\Microsoft Office\\root\\Office16\\WINWORD.EXE"
+        },
+        {
+            "name": "proton",
+            "path": "C:\\Program Files\\Proton\\VPN\\ProtonVPN.Launcher.exe"
+        },
+        {
+            "name": "settings",
+            "path": "C:\\Windows\\ImmersiveControlPanel\\SystemSettings.exe"
+        },
+        {
+            "name": "task manager",
+            "path": "C:\\Windows\\System32\\Taskmgr.exe"
+        },
+        {
+            "name": "vlc",
+            "path": "C:\\Program Files\\VideoLAN\\VLC\\vlc.exe"
+        }
+    ]
+}

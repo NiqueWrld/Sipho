@@ -1,0 +1,28 @@
+{
+    "intents": [
+        {
+            "tag": "clearconsole",
+            "input": [
+                "clear the console",
+                "clear screen",
+                "refresh the console",
+                "clear terminal",
+                "console clear",
+                "clean the screen",
+                "reset the console",
+                "clear everything",
+                "scrub the console"
+            ],
+            "responses": [
+                "Console cleared.",
+                "Screen has been cleared.",
+                "Console has been reset.",
+                "Console is now clear.",
+                "The console has been cleaned.",
+                "Console is now empty.",
+                "Terminal has been refreshed.",
+                "Console has been cleaned up."
+            ]
+        }
+    ]
+}
