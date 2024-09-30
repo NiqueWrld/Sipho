@@ -264,8 +264,8 @@
       "responses": [
         "I Live in the storage of this device.",
         "Sometimes on a hard drive , sometimes on a usb stick.",
-        "I live in Rom. Pretty sure you wouldn't have heard about that",
-        "Rom. That's where I live"
+        "Hard Drive or USB depends where the presentation is at",
+        "If i look carefully i think i am in the ram right now"
       ]
     },
     {
@@ -380,6 +380,69 @@
         "I've muted the volume",
         "Sound turned off",
         "The volume has been silenced"
+      ]
+    },
+    {
+      "tag": "todaydate",
+      "input": [
+        "what is the date today ?",
+        "what is todays date ?",
+        "todays date ?",
+        "cann you tell me the date today ?"
+      ],
+      "responses": [
+        "sorry i could not get the date ?"
+      ]
+    },
+    {
+      "tag": "disagree",
+      "input": [
+        "nope",
+        "no",
+        "will not",
+        "no ways"
+      ],
+      "responses": [
+        "understood"
+      ]
+    },
+    {
+      "tag": "adbbattery",
+      "input": [
+        "what is my phones battery percentage ?",
+        "what is the battery on my phone ?",
+        "can you tell me the battery percentage on my phone ?",
+        "what battery percentage my phone has ?",
+        "can you please tell me the better percentage of my phone?",
+        "what is the battery percentage of my phone ?"
+      ],
+      "responses": [
+        "sorry could not get the percentage "
+      ]
+    },
+    {
+      "tag": "adbischarging",
+      "input": [
+        "do you know if my phone is charging ?",
+        "can you please check if my phone is charging ?",
+        "is my phone charging ?"
+      ],
+      "responses": [
+        "sorry i could not get if your phone is charging or not."
+      ]
+    },
+    {
+      "tag": "iotled",
+      "input": [
+        "turn on red led",
+        "turn on white led",
+        "turn on blue led",
+        "turn off red led ",
+        "turn off white led",
+        "turn off blue led "
+      ],
+      "responses": [
+        "got it"
       ]
     }
   ]
